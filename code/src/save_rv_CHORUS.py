@@ -79,7 +79,7 @@ for scisci_frac in scisci_frac_values:
             # total number of spectra you want to generate
             nspec=100,
             # instrument info based on 3-slice setting
-            temp_file='4500K.npz',
+            temp_file='sun.npz',
             R=120000,
             read_noise=2.5,
             trace_height=17,
@@ -151,7 +151,7 @@ def save_file(params: namedtuple, params_inst: namedtuple, params_flags: namedtu
             # save the results
             # example of filename: ./output/synfile_CHORUS/snr100/120000_0_red.npz
             filename = f"{params.scisci_frac}_{ispec}_{iband}.npz"
-            filepath = os.path.join(pwd, f'./output/synfile_CHORUS_k/snr{params.SNR_sci}/{filename}')
+            filepath = os.path.join(pwd, f'./output/synfile_CHORUS/snr{params.SNR_sci}/{filename}')
             # create the folder if not exist
             folder_path = os.path.dirname(filepath)
             os.makedirs(folder_path, exist_ok=True)
